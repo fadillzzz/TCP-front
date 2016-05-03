@@ -19,7 +19,6 @@ var gulp = require('gulp'),
                 'ts/**/*.ts'
             ],
             deps: [
-                //'assets/js/dependencies/sails.io.js',
                 'node_modules/es6-shim/es6-shim.js',
                 'node_modules/angular2/es6/dev/src/testing/shims_for_IE.js',
                 'node_modules/angular2/bundles/angular2-polyfills.js',
@@ -76,7 +75,9 @@ var tsProject = typescript.createProject({
                 });
 
 gulp.task('js', function () {
-    gulp.src(assets.js.deps).pipe(concat(assets.js.depsFile)).pipe(uglify()).pipe(gulp.dest(assets.js.dst));
+    gulp.src(assets.js.deps)
+        .pipe(concat(assets.js.depsFile))
+        .pipe(uglify()).pipe(gulp.dest(assets.js.dst));
 
     var tsResult = gulp.src(assets.js.src)
                        .pipe(typescript(tsProject));
