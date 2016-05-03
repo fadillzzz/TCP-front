@@ -24,7 +24,8 @@ var gulp = require('gulp'),
                 'node_modules/angular2/bundles/angular2-polyfills.js',
                 'node_modules/systemjs/dist/system.src.js',
                 'node_modules/rxjs/bundles/Rx.js',
-                'node_modules/angular2/bundles/angular2.js'
+                'node_modules/angular2/bundles/angular2.js',
+                'node_modules/angular2/bundles/router.js'
             ],
             depsFile: 'deps.js',
             dst: 'public/scripts',
